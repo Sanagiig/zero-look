@@ -1,0 +1,22 @@
+Name: usercenter.rpc
+ListenOn: 0.0.0.0:7004
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+  AccessExpire: 31536000
+
+Log:
+  ServiceName: userCenter-rpc
+  Level: error
+
+Redis:
+  Host: redis:6379
+  Type: node
+  Pass: lwj@1993
+  Key: userCenter-rpc
+DB:
+  DataSource: root:lwj@1993@tcp(127.0.0.1:3306)/looklook?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+Cache:
+  - Host: 127.0.0.1:6379
+    Pass: lwj@1993

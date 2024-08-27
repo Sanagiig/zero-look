@@ -1,0 +1,24 @@
+Name: usercenter
+Host: 0.0.0.0
+Port: 8004
+Mode: dev
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+
+
+Log:
+  ServiceName: usercenter-rpc
+  Level: error
+  Encoding: plain
+
+#WxMiniConf
+WxMiniConf:
+  AppId: wx2add729fadddddd
+  Secret: 20365395b3de9b2a9351ddddddd
+
+UserCenterRpcConf:
+  Endpoints:
+    - 127.0.0.1:7004
+  NonBlock: true

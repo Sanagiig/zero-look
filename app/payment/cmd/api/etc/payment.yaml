@@ -1,0 +1,40 @@
+Name: payment
+Host: 0.0.0.0
+Port: 8002
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+
+#监控
+Prometheus:
+  Host: 0.0.0.0
+  Port: 4004
+  Path: /metrics
+
+#链路追踪
+Telemetry:
+  Name: payment-api
+  Endpoint: http://jaeger:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+Log:
+  ServiceName: payment-api
+  Level: error
+
+#rpc service
+PaymentRpcConf:
+  Endpoints:
+    - 127.0.0.1:7002
+  NonBlock: true
+
+OrderRpcConf:
+  Endpoints:
+    - 127.0.0.1:7001
+  NonBlock: true
+
+UsercenterRpcConf:
+  Endpoints:
+    - 127.0.0.1:7004
+  NonBlock: true
